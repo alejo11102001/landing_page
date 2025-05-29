@@ -1,0 +1,237 @@
+/* Variables */
+:root {
+    --color-primary: #004080;
+    --color-accent: #FF8C00;
+    --color-text: #000000;
+    --color-bg: #f9f9f9;
+    --color-footer: #222;
+    --color-footer-text: #fff;
+    --font-main: 'Segoe UI', sans-serif;
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* Header */
+.Card__Header {
+    background-color: var(--color-primary);
+    padding: 1rem;
+}
+
+.Header__Menu {
+    display: flex;
+    justify-content: center;
+}
+
+.Menu__List {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.List__Item a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.List__Item a:hover {
+    color: var(--color-accent);
+}
+
+/* Main */
+.Section__Carrusel {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fffaf0;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.Section__Title{
+    text-align: center;
+    margin: 40px;
+}
+
+.Carrusel__Wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ocultar los inputs */
+.Carrusel__Input {
+    display: none;
+}
+
+/* Carrusel */
+.Carrusel__Items {
+    display: flex;
+    width: 400%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.Items__Testimonial {
+    flex: 0 0 100%;
+    padding: 1rem 2rem;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.Testimonial__Cite {
+    font-style: italic;
+    color: #000000;
+    margin-bottom: 0.8rem;
+}
+
+.Testimonial__Author {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Controles */
+.Carrusel__Controls {
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.Controls__Label {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Controls__Label:hover {
+    background-color: var(--color-primary);
+}
+
+/* Movimiento del carrusel */
+.Carrusel__Wrapper #t1:checked ~ .Carrusel__Items {
+    transform: translateX(0%);
+}
+.Carrusel__Wrapper #t2:checked ~ .Carrusel__Items {
+    transform: translateX(-100%);
+}
+.Carrusel__Wrapper #t3:checked ~ .Carrusel__Items {
+    transform: translateX(-200%);
+}
+.Carrusel__Wrapper #t4:checked ~ .Carrusel__Items {
+    transform: translateX(-300%);
+}
+
+/* Testimonio activo */
+.Carrusel__Wrapper #t1:checked ~ .Carrusel__Items .Items__Testimonial:nth-child(1),
+.Carrusel__Wrapper #t2:checked ~ .Carrusel__Items .Items__Testimonial:nth-child(2),
+.Carrusel__Wrapper #t3:checked ~ .Carrusel__Items .Items__Testimonial:nth-child(3),
+.Carrusel__Wrapper #t4:checked ~ .Carrusel__Items .Items__Testimonial:nth-child(4) {
+    opacity: 1;
+}
+
+/* Indicador activo */
+.Carrusel__Wrapper #t1:checked ~ .Carrusel__Controls label[for="t1"],
+.Carrusel__Wrapper #t2:checked ~ .Carrusel__Controls label[for="t2"],
+.Carrusel__Wrapper #t3:checked ~ .Carrusel__Controls label[for="t3"],
+.Carrusel__Wrapper #t4:checked ~ .Carrusel__Controls label[for="t4"] {
+    background-color: var(--color-primary);
+}
+
+/* Footer */
+.Card__Footer {
+    background-color: var(--color-footer);
+    color: var(--color-footer-text);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.Footer__Author {
+    margin: 0.5rem 0;
+}
+
+.Author__Link {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.Author__Link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+    /* Header - menú vertical y centrado */
+    .Header__Menu {
+        justify-content: center;
+        padding: 0.5rem 1rem;
+    }
+
+    .Menu__List {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .List__Item a {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        display: block;
+    }
+
+    /* Main - sección carrusel más estrecha y con menos padding */
+    .Section__Carrusel {
+        max-width: 100%;
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    .Section__Title {
+        margin: 20px 10px;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    /* Carrusel - items en flex columna para evitar scroll horizontal */
+    .Carrusel__Items {
+        flex-direction: column;
+        width: 100% !important;
+        transition: none;
+        transform: none !important;
+    }
+
+    .Items__Testimonial {
+        flex: none;
+        opacity: 1 !important;
+        padding: 1rem 1rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        background-color: #fffaf0;
+    }
+
+    /* Ocultar controles para simplificar en móvil */
+    .Carrusel__Controls {
+        display: none;
+    }
+
+    /* Footer - padding y tamaño de fuente ajustados */
+    .Card__Footer {
+        padding: 1rem 0.5rem;
+        font-size: 0.9rem;
+    }
+}

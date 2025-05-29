@@ -1,0 +1,146 @@
+/*Variables*/
+:root {
+    --color-primary: #004080;
+    --color-accent: #FF8C00;
+    --color-text: #000000;
+    --color-bg: #f9f9f9;
+    --color-footer: #222;
+    --color-footer-text: #fff;
+    --font-main: 'Segoe UI', sans-serif;
+}
+
+/*Reset*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* Header */
+.Card__Header {
+    background-color: var(--color-primary);
+    padding: 1rem;
+}
+
+.Header__Menu {
+    display: flex;
+    justify-content: center;
+}
+
+.Menu__List {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.List__Item a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.List__Item a:hover {
+    color: var(--color-accent);
+}
+
+/* Main*/
+.Main__Section {
+    padding: 3rem 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ffffffcc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Section__Title {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    font-weight: bold;  
+    margin: 18px;  
+}
+
+.Section__Description {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1.2rem;
+    line-height: 1.8;
+}
+
+
+/* Footer*/
+.Card__Footer {
+    background-color: var(--color-footer);
+    color: var(--color-footer-text);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.Footer__Author {
+    margin: 0.5rem 0;
+}
+
+.Author__Link {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.Author__Link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+    /* Header - menú vertical y centrado */
+    .Header__Menu {
+        justify-content: center;
+        padding: 0.5rem 1rem;
+    }
+
+    .Menu__List {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .List__Item a {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        display: block;
+    }
+
+    /* Main - padding reducido y ancho total */
+    .Main__Section {
+        padding: 1.5rem 1rem;
+        max-width: 100%;
+        margin: 0 0.5rem;
+        border-radius: 8px;
+    }
+
+    /* Títulos más pequeños y con menos margen */
+    .Section__Title {
+        font-size: 1.6rem;
+        margin: 12px 0;
+    }
+
+    .Section__Description {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+
+    /* Footer - padding reducido y texto más pequeño */
+    .Card__Footer {
+        padding: 1rem 0.5rem;
+        font-size: 0.9rem;
+    }
+}

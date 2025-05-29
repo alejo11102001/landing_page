@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registro | Feria Aeronáutica 2025</title>
+        <link rel="stylesheet" href="../Css/style4.css" />
+    </head>
+    <body>
+
+        <header class="Card__Header">
+            <nav class="Header__Menu" aria-label="Menú principal">
+                <ul class="Menu__List">
+                    <li class="List__Item"><a href="../index.html">Inicio</a></li>
+                    <li class="List__Item"><a href="../Html/Sobre_feria.html">Sobre la Feria</a></li>
+                    <li class="List__Item"><a href="../Html/Testimonio.html">Testimonios</a></li>
+                    <li class="List__Item"><a href="../Html/Registro.html">Registro</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="Card__Main">
+            <section class="Main__Section">
+                <h2 class="Section__Title">Asegura tu lugar en el evento del año</h2>
+                <p class="Section__Description">Inscribirte es gratuito. Solo necesitamos algunos datos para preparar tu experiencia personalizada.</p>
+
+                <form class="Section__Formulary" action="#" method="post">
+                    <label class="Formulary__Label" for="nombre">Nombre completo</label>
+                    <input class="Formulary__Input" type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required />
+
+                    <label class="Formulary__Label" for="correo">Correo electrónico</label>
+                    <input class="Formulary__Input" type="email" id="correo" name="correo" placeholder="Ingresa tu correo" required />
+
+                    <label class="Formulary__Label" for="ticket">Tipo de ticket</label>
+                    <select class="Formulary__Select" id="ticket" name="ticket" required>
+                        <option class="Select__Option">Selecciona una opción</option>
+                        <option class="Select__Option" value="general">General</option>
+                        <option class="Select__Option" value="estudiante">Estudiante</option>
+                        <option class="Select__Option" value="vip">VIP</option>
+                    </select>
+
+                    <button type="submit" class="Formulary__Button">Confirmar registro</button>
+
+                    <p class="Formulary__Error">Por favor, completa este campo.</p>
+                    <p class="Formulary__Done">¡Registro exitoso! Te esperamos en la feria.</p>
+                </form>
+            </section>
+        </main>
+
+        <footer class="Card__Footer">
+            <p class="Footer__Author">© 2025 Feria Aeronáutica. Todos los derechos reservados.</p>
+            <p class="Footer__Author">
+                <a href="#" class="Author__Link">Política de privacidad</a> – 
+                <a href="#" class="Author__Link">Términos y condiciones</a>
+            </p>
+            <p class="Footer__Author">Síguenos: Facebook | Instagram | X | YouTube</p>
+            <p class="Footer__Author">Contacto: contacto@feriaaeronautica.com</p>
+        </footer> 
+
+    </body>
+</html>

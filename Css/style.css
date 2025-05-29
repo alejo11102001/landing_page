@@ -1,0 +1,175 @@
+/*Variables*/
+:root {
+    --color-primary: #004080;
+    --color-accent: #FF8C00;
+    --color-text: #000000;
+    --color-bg: #f9f9f9;
+    --color-footer: #222;
+    --color-footer-text: #fff;
+    --font-main: 'Segoe UI', sans-serif;
+}
+
+/*Reset*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* Header */
+.Card__Header {
+    background-color: var(--color-primary);
+    padding: 1rem;
+}
+
+.Header__Menu {
+    display: flex;
+    justify-content: center;
+}
+
+.Menu__List {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.List__Item a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.List__Item a:hover {
+    color: var(--color-accent);
+}
+
+
+/* Main */
+.Card__Main {
+    background-image: url("../Images/feria.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: white;
+}
+
+.Main__section {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.Section__Title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.Section__Introduction {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.Section__Button {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.Section__Button:hover {
+    background-color: #e67300;
+}
+
+/* Footer*/
+.Card__Footer {
+    background-color: var(--color-footer);
+    color: var(--color-footer-text);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.Footer__Author {
+    margin: 0.5rem 0;
+}
+
+.Author__Link {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.Author__Link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+    /* Header - menú en columna y centrado */
+    .Header__Menu {
+        justify-content: center;
+        padding: 0.5rem 1rem;
+    }
+
+    .Menu__List {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    /* Links del menú más grandes y con padding */
+    .List__Item a {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        display: block;
+    }
+
+    /* Main - altura menor para móvil */
+    .Card__Main {
+        height: 300px;
+        padding: 1rem;
+    }
+
+    /* Ajuste padding del contenido principal */
+    .Main__section {
+        padding: 1rem;
+    }
+
+    /* Títulos más pequeños para móvil */
+    .Section__Title {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .Section__Introduction {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Botón más ancho y con fuente ajustada */
+    .Section__Button {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+
+    /* Footer - padding reducido */
+    .Card__Footer {
+        padding: 1rem 0.5rem;
+        font-size: 0.9rem;
+    }
+}
